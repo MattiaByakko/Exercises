@@ -36,8 +36,8 @@ public class Pc {
     private double prezzo;
 
     @JsonProperty("webcam")
-    private boolean webcam;
+    private String webcam;
 
-    // Getters and setters omitted for brevity
+
 }
 
