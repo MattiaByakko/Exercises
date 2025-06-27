@@ -19,7 +19,7 @@ public class Order {
         private final LocalDateTime orderDate;
 
         @ManyToOne
-        @JoinColumn(name = "client_id")
+        @JoinColumn(name = "cliente_id")
         private Cliente cliente;
 
         @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)

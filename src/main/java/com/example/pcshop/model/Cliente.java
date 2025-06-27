@@ -16,4 +16,9 @@ public class Cliente {
     @JsonProperty("email")
     private String email;
 
+    @JsonProperty("nome")
+    private String nome;
+
+    @JsonProperty("cognome")
+    private String cognome;
 }
