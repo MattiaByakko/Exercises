@@ -18,8 +18,8 @@ public class Order {
         private final LocalDateTime orderDate;
 
         @ManyToOne
-        @JoinColumn(name = "user_id")
-        private User user; // Sostituisci con Client se la tua entità si chiama così
+        @JoinColumn(name = "client_id")
+        private Cliente cliente;
 
         @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
         private List<OrderItem> items = new ArrayList<>();
@@ -28,8 +28,8 @@ public class Order {
             this.orderDate = LocalDateTime.now();
         }
 
-        public Order(User user) {
-            this.user = user;
+        public Order(Cliente cliente) {
+            this.cliente = cliente;
             this.orderDate = LocalDateTime.now();
         }
 
@@ -45,7 +45,6 @@ public class Order {
             item.setOrder(null);
         }
 
-        // Altri getter e setter
 
         public Long getId() {
             return id;
@@ -55,8 +54,8 @@ public class Order {
             return orderDate;
         }
 
-        public User getUser() {
-            return user;
+        public Cliente getCliente() {
+            return cliente;
         }
 
         public List<OrderItem> getItems() {
@@ -64,6 +63,6 @@ public class Order {
         }
 
         public void setUser(User user) {
-            this.user = user;
+            this.cliente = cliente;
         }
 }
